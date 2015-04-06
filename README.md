@@ -1,4 +1,5 @@
 # ESP8266_MQTT_NodeJs
+<<<<<<< HEAD
 Una simple aplicacion web IoT para testear tu ESP8266, que puede servir para manejar un switch remoto con una arquitectura de MQTT usando el servidor iot.eclipse.org, NodeJS, socket.io, AngularJS, Angular Material, MongoDb, etc.
 
 <img width='300' src='[url=http://es.zimagez.com/avatar/screenshot80e96a32de2c2095160a3d1da4fc6b64.png'>
@@ -9,3 +10,7 @@ Una simple aplicacion web IoT para testear tu ESP8266, que puede servir para man
 * MongoDB
 
 NOTA: Documentacion en proceso.
+=======
+Test ESP8266 con MQTT, NodeJS, socket.io, etc.
+<img width='300' src='[url=http://es.zimagez.com/zimage/screenshot80e96a32de2c2095160a3d1da4fc6b64.php][img]http://es.zimagez.com/avatar/screenshot80e96a32de2c2095160a3d1da4fc6b64.png'>
+>>>>>>> e9d4ddb4d5e909342930eb277d41c26e58ebcab1
