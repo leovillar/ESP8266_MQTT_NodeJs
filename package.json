@@ -1,0 +1,14 @@
+{
+  "name": "ESP8266_MQTT_NodeJs",
+  "version": "1.0.0",
+  "description": "Test ESP8266 con MQTT, NodeJS, socket.io, etc.",
+  "main": "mqtt",
+  "dependencies": {
+    "express": "^4.10.1",
+    "mongoose": "^4.0.1",
+    "mqtt": "^0.3.x",
+    "socket.io": "^1.3.x"
+  },
+  "author": "leovillar@gmail.com",
+  "license": "MIT"
+}

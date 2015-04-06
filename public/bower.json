@@ -1,0 +1,16 @@
+{
+  "name": "ESP8266_MQTT_NodeJs",
+  "version": "0.0.0",
+  "authors": [
+    "Leo Villar <leovillar@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+  "dependencies": {
+    "angular-material": "~0.5.1",
+    "angular-socket-io": "~0.6.0"
+  }
+}
