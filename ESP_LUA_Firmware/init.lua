@@ -1,25 +1,42 @@
 -- MIT License 2015 Leo Villar
 -- https://github.com/leovillar/ESP8266_MQTT_NodeJs
 
-pin = 4  --> GPIO2
-local value = gpio.LOW
-gpio.mode(pin, gpio.OUTPUT)
-gpio.write(pin, value)
+local pinO = 3  --> GPIO0
+local pinI = 4  --> GPIO2
+local state = ''
+local setstate = ''
+
+local value = gpio.HIGH
+gpio.mode(pinO, gpio.OUTPUT)
+gpio.write(pinO, value)
 
 wifi.setmode(wifi.STATION)
 wifi.sta.config("ssid","pws")
 
 port = 1883
 host = "iot.eclipse.org"
---host = "192.168.1.142"
+
+function onChangeSwitch ()
+    print('The pin value has changed to '..gpio.read(pinI))
+    if state == 'false' then
+        setstate = 'true'
+    else
+        setstate = 'false'
+    end
+    m:publish("switch1",setstate,1,1, function(conn) end)
+end
+
+gpio.mode(pinI, gpio.INT)
+gpio.write(pinI, gpio.LOW)
+gpio.trig(pinI, 'both', onChangeSwitch)
 
 function switchLED (estado)
   if estado == 'true' then
-    value = gpio.HIGH
-  else
     value = gpio.LOW
+  else
+    value = gpio.HIGH
   end
-  gpio.write(pin, value)
+  gpio.write(pinO, value)
 end
 
 m = mqtt.Client("ESP8266_"..node.chipid(), 120, "", "")
@@ -33,9 +50,9 @@ m:on("offline", function(con)
 end)
 
 m:on("message", function(conn, topic, data) 
-  print(topic .. ":" ) 
+  print(topic .. ":" ..data ) 
   if data ~= nil then
-    print(data)
+    state = data
     switchLED(data)
   end
 end)
@@ -44,7 +61,7 @@ tmr.alarm(0, 1000, 1, function()
   if wifi.sta.status() == 5 then
     tmr.stop(0)
     m:connect(host, port, 0, function(conn)
-      print("conectado")
+      print("connectado")
       m:subscribe("switch1",0, function(conn) print("Subcripcion ok switch1")
       end)
     end)
