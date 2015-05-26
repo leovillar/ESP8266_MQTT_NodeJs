@@ -7,6 +7,9 @@ Boceto de la arquitectura
 Pantalla 
 ![alt tag](https://dl.dropboxusercontent.com/u/6174465/Screenshot.jpg)
 
+Coneccionado
+![alt tag](https://dl.dropboxusercontent.com/u/6174465/coneccionado.jpg)
+
 # Requisitos de software preinstalado
 * NodeJS y npm
 * Bower
