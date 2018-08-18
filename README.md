@@ -16,3 +16,19 @@ Coneccionado
 * MongoDB
 
 NOTA: Documentacion en proceso......
+
+# Comandos:
+To install npm packages run on root project directory:
+  ```
+  npm install
+  ```
+ To install bower packages run on ```public/``` directory:
+  ```
+  bower install
+  ```
+  
+ NOTE: If you haven't bower, run :
+ 
+ ```
+  npm install -g bower
+  ```
